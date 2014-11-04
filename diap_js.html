@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link href="diap_javascript.css" type="text/css" rel="stylesheet">
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">-->
+  <!--<meta name="viewport" content="width=device-width, initial-scale=1.0">-->
+  <!--This one seems to work all the time, but really small on ipad-->
+  <!--<meta name="viewport" content="initial-scale=0.4">-->
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="stylesheet" media="all" href="theme/css/default.css">
+  <link rel="stylesheet" media="only screen and (max-device-width: 480px)" href="theme/css/phone.css">
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->
+  <script data-main="js/slides" src="js/require-1.0.8.min.js"></script>
+</head>
+<body style="opacity: 0">
+
+<slides class="layout-widescreen">
+
+  <slide class="logoslide nobackground">
+    <article class="flexbox vcenter">
+      <span><img src="images/logo_noordover.png"></span>
+    </article>
+  </slide>
+
+  <slide class="title-slide segue nobackground">
+    <aside class="gdbar"><img src="images/icon_128.png"></aside>
+    <hgroup class="auto-fadein">
+      <h1 data-config-title></h1>
+      <h2 data-config-subtitle></h2>
+      <p data-config-presenter></p>
+    </hgroup>
+  </slide>
+
+  <slide>
+    <hgroup>
+      <h2>Qu'est-ce que le Javascript?</h2>
+    </hgroup>
+    <article>
+		Javascript est un langage de programmation, c’est une forme de code qui permet, quand on sait l’écrire, de dicter à l’ordinateur quoi faire.<br><br>
+		On trouve la majorité du code Javascript dans des pages Web, même si vous ne le voyez pas s’afficher. En effet, c’est le seul langage qui permette de dicter à un navigateur Web (Internet Explorer, Firefox, Chrome…)
+		ce qu’il doit faire sans rien installer. La grande majorité des navigateurs Web “parlent” le Javascript.
+		<br>Cela marche ainsi :	 
+		<ul class="build fade"><br>
+        <li>	L’utilisateur clique sur un lien ou entre une adresse.</li><br>
+        <li>	Son navigateur charge la page Web. Il voit le texte, les couleurs, les images.</li><br>
+        <li>	Si la page Web contient du code Javascript, le navigateur lit le code Javascript et suit les instructions du code.</li>
+      </ul>
+	
+    </article>
+  </slide>
+ 
+ <slide>
+    <hgroup>
+      <h2>A quoi ça sert?</h2>
+    </hgroup>
+    <article>
+		<br>Généralement le code Javascript dans une page Web sert à :
+		<ul class="build"><br>
+        <li>	Faire bouger, apparaitre ou disparaitre des éléments de la page (un titre, un menu, un paragraphe, une image…)
+        </li><br>
+        <li>	Mettre à jour des éléments de la page sans recharger la page (changer le texte, recalculer un nombre, etc)</li><br>
+        <li>	Demander au serveur un nouveau bout de page et l’insérer dans la page en cours, sans la recharger</li><br>
+        <li>	Attendre que l’utilisateur face quelque chose (cliquer, taper au clavier, bouger la souris…) et réagir
+		(faire une des opérations ci-dessus suite à cette action)</li>
+      </ul>
+	
+    </article>
+  </slide>
+  
+  <slide>
+    <hgroup>
+      <h2>Maintenant que vous avez cerné la chose, venons-en au fait...</h2>
+    </hgroup>
+    <article>
+		<div id="diap5_img">
+			<img src="images/image alex.png" class="reflect" alt="Description" title="Description">
+      <footer class="source">Source: site internet</footer>
+		</div>  
+		<div id="diap5_txt"><br>
+			Vous avez maintenant compris à quoi servait le Javascript dans l'ensemble!<br>
+	Mais dans le fond, ça ressemble à quoi, le Javascript? Nous allons voir ça tout de suite.<br>
+	Je vais tout d'abord faire une courte présentation personnelle :<br>
+	je suis lycéen, en spécialisation ISN, et j'ai suivi une formation de JavaScript
+	sur <a href="http://www.codecademy.com">Codacademy</a>.<br>
+		</div>	
+    </article>
+  </slide>
+  
+  <slide>
+    <hgroup>
+      <h2>Introduction au Javascript</h2><br>
+	  <h3>Des syntaxes simplistes</h3>
+    </hgroup>
+    <article>
+		<p>On peut rentrer des calculs simples comme présentés ci-dessous : ils seront effectués.</p>
+		 <pre class="prettyprint" data-lang="javascript">
+	5 + 2
+	8 / 7
+	6 * 9
+</pre>
+	<p>De la même manière, on peut demander une confirmation ou poser une question à l'utilisateur via une boite de dialogue qui s'ouvre (le cas
+	se présente souvent, par exemple lorsqu'on quitte une page pendant un téléchargement).</p>
+	<pre class="prettyprint" data-lang="javascript">
+	confirm("Êtes-vous sûr de vouloir quitter cette page?");
+	prompt("Allez-vous bien?");
+</pre>
+    </article>
+  </slide>
+  
+  <slide>
+    <hgroup>
+      <h2>Types de données I & II</h2><br>
+	  <h3>Nombres et chaînes de caractères</h3>
+    </hgroup>
+    <article>
+		<p>Pour travailler sur un nombre dans le code, on peut l'écrire sans guillemet.</p>
+		<p>Or pour travailler avec une chaîne de caractère, qui se compose des lettres a-z, 
+		d'espaces et même de nombres, il faut l'entourer de guillemets, voyez ci-dessous.</p>
+		 <pre class="prettyprint" data-lang="javascript">
+	47,150.852
+	"Je suis une chaîne de caractères"
+</pre>
+	<p>Le code peut calculer le nombre de caractères que contient la chaîne. Attention : il prend en compte les espaces!</p>
+	<pre class="prettyprint" data-lang="javascript">
+	"C'est toujours moi".length
+</pre>
+	<p>Le code aurait affiché dans la console la valeur 18 pour cet exemple-ci.
+    </article>
+  </slide>
+  
+  <slide>
+  
+	<aside class="note">
+      <section>
+        <p>Voici les différents opérateurs de comparaison :</p>
+        <br />
+        <ul>
+          <li><b> > </b> supérieur à</li>
+          <li><b> < </b> inférieur à</li>
+          <li><b> >= </b> supérieur ou égal à</li>
+		  <li><b> <= </b> inférieur ou égal à</li>
+		  <li><b> === </b> égal à</li>
+		  <li><b> !== </b> différent de</li>
+		  <p>On peut également utiliser le modulo (%), qui va établir une division entre les deux nombres et afficher le reste. 
+        </ul>
+      </section>
+	</aside>
+  
+    <hgroup>
+      <h2>Types de données III</h2><br>
+	  <h3>Les booléens</h3>
+    </hgroup>
+    <article>
+		<p>Le booléen reprend la notion vue précédemment, mais y ajoute un comparatif : il est soit vrai, soit faux : la console affichera true ou false.</p>
+		<p>Admettons, comparons si "c'est moi la chaîne exploitée" contient moins de 20 caractères. Pressez P pour afficher les différents opérateurs de comparaison.</p>
+		 <pre class="prettyprint" data-lang="javascript">
+	
+	"c'est moi la chaîne exploitée".lenght < 20
+	
+</pre>
+	<p>La console affiche false...Effectivement, la chaîne est composée de 29 caractères!</p>
+
+    </article>
+  </slide>
+  
+  
+  <slide>
+    <hgroup>
+      <h2>Utilisation du console.log( )</h2><br>
+    </hgroup>
+    <article>
+		<p>L'interpréteur n'affiche pas toujours ce qu'il fait. C'est pourquoi il y a une syntaxe qui va permettre de prendre en considération ce qui sera
+		mis entre les parenthèses, ci dessous :</p>
+		 <pre class="prettyprint" data-lang="javascript">
+	console.log( );
+</pre><br>
+	<p>Elle peut permettre d'effectuer des calculs, des comparaisons, ou simplement afficher quelque chose dans la console :</p>
+	<pre class="prettyprint" data-lang="javascript">
+	
+	console.log(5 + 2);
+	console.log(15+2 > 16);
+	console.log("Ai-je plus de vingt caractères?".length > 20);
+	console.log("Et ça marche!");
+	
+</pre>
+
+    </article>
+  </slide>
+  
+  <slide>
+    <hgroup>
+      <h2>Premier pas dans la programmation</h2>
+    </hgroup>
+    <article class="smaller">
+		<p>Le JavaScript peut s'avérer très intéressant : nous allons voir un premier "programme" basé sur une algorithmique simple. La syntaxe sera ainsi :</p>
+		 <pre class="prettyprint" data-lang="javascript">
+	<b>if (condition)</b> 
+{
+    console.log("C'est donc vrai");
+}
+	<b>else</b> 
+{
+    console.log("Hélas c'est faux");  
+}
+</pre>
+	<p>If signifie "si", et comprend une condition à poser entre les parenthèses. Le log qui est en dessous s'affiche SI la condition est respectée. A l'inverse, else
+	signifie "sinon", alors si la condition n'est pas respectée, ce log s'affichera. Voici un exemple simple :</p>
+		 <pre class="prettyprint" data-lang="javascript">
+	<b>if (2+2 === 4)</b> 
+{
+    console.log("Si deux et deux font quatre, je serai affiché");
+}
+	<b>else</b> 
+{
+    console.log("Si deux et deux ne font pas quatre... Peu importe, je serai affiché!");
+}
+</pre>
+
+    </article>
+  </slide>
+  
+  <slide>
+	<aside class="note">
+      <section>
+        <p>Voici un autre exemple :</p>
+        <br />
+        <pre class="prettyprint" data-lang="javascript">
+	<b>var</b> maTaille <b>=</b> 175;
+	<b>console.log</b>(maTaille >= 180);
+</pre>
+		<p>La console affiche false, effectivement ma taille, de 175cm, n'est ni supérieure ni égale à 180cm.
+      </section>
+	</aside>
+ 
+    <hgroup>
+      <h2>Variables</h2><br>
+    </hgroup>
+    <article>
+		Maintenant que nous avons vu quelques fonctionnalités du JavaScript, nous allons apprendre la notion de <b>variables</b>. Alors qu'est-ce que c'est?
+		C'est tout simplement ce qui va permettre de "nommer" une donnée, pour ainsi se permettre des syntaxes plus complexes. Voici comment elle se présente :
+		 <pre class="prettyprint" data-lang="javascript">
+	<b>var</b> [nomVariable] <b>=</b> [nombre ou chaîne de caractère]
+</pre>
+	<p>Prennons un exemple simple : on va prendre la chaîne "J'ai une voiture bleue, une rouge et une verte" et l'introduire dans une variable nommée voitures, ainsi
+on pourra demander à calculer le nombre de caractères de cette chaîne :	</p>
+	<pre class="prettyprint" data-lang="javascript">
+	
+	<b>var</b> voitures <b>=</b> "J'ai une voiture bleue, une rouge et une verte";
+	<b>console.log</b>(voitures.length);
+	
+</pre>
+	<p>Dans la console, on constatera que 46 s'est affiché : c'est le nombre de caractères que contient ma chaîne. (P pour voir un autre exemple)
+
+    </article>
+  </slide>
+  
+  
+  
+  
+  
+  
+  
+ 
+  
+  <slide>
+    <hgroup>
+      <h2>Fonctions</h2><br>
+	  Les fonctions font partie des choses fondamentales qui composent JavaScript. Afin d'utiliser une fonction, il est nécessaire de la définir.
+	  <h3>Définir une fonction</h3>
+    </hgroup>
+    <article>
+		Une définition de fonction est construite avec le mot-clé function, suivi par :
+		<ul class="build"><br>
+        <li>	Le nom de la fonction,</li><br>
+        <li>	Une liste d'arguments à passer à la fonction, entre parenthèses et séparés par des virgules,</li><br>
+        <li>	Les instructions JavaScript définissant la fonction, entre accolades, { }.</li><br>
+      </ul>
+	
+    </article>
+  </slide>
+  
+  
+ 
+  <slide>
+    <hgroup>
+      <h2>Encore quelques exemples</h2>
+	  <h3>Les chaînes de caractères</h3>
+    </hgroup>
+    <article>
+		 <table>
+        <tr>
+          <th></th><th>Syntaxe</th><th>Fonction</th>
+        </tr>
+        <tr>
+          <td>Gras</td><td>bold( )</td><td>Affiche le texte en gras, correspond au tag HTML < b >.</td>
+        </tr>
+        <tr>
+          <td>Italique</td><td>italics( )</td><td>Affiche le texte en italique, correspond au tag HTML < i >.</td>
+        </tr>
+        <tr>
+          <td>Couleur</td><td>fontcolor("couleur")</td><td>Affiche le texte en couleur, le nom de la couleur est un paramètre dans les parenthèses, il peut être en code hexadécimal 
+		  ou en Anglais si le nom de la couleur est reconnu par le navigateur, et correspond au tag HTML < FONT COLOR="couleur" >.</td>
+        </tr>
+        <tr>
+          <td>Taille</td><td>fontsize(chiffre de 1 à 7)</td><td>Détermine la taille des caractères, du plus petit (1) au plus grand (7), et correspond au tag HTML < FONT SIZE="chiffre de 1 à 7" >.</td>
+        </tr>
+        <tr>
+          <td>Lien</td><td>link("url du lien")</td><td>Pose un lien vers une page ou un ancrage, et correspond au tag HTML < A HREF="url du lien" >< /A >.</td>
+        </tr>
+      </table>
+    </article>
+  </slide>
+  
+	
+
+  <slide class="backdrop"></slide>
+
+</slides>
+
+
+
+<!--[if IE]>
+  <script src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js"></script>
+  <script>CFInstall.check({mode: 'overlay'});</script>
+<![endif]-->
+</body>
+</html>
