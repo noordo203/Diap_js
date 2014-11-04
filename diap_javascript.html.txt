@@ -257,7 +257,7 @@ on pourra demander à calculer le nombre de caractères de cette chaîne :	</p>
     </article>
   </slide>
   
-  
+ //premier test pour tester GitHub//
   
   
   
