@@ -1,0 +1,5 @@
+#diap5_img, #diap5_txt {
+	display:inline-block;
+	vertical-align:top;
+	width:45%;
+};
